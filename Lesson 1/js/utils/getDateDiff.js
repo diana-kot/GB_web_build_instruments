@@ -1,4 +1,4 @@
-import { DateTime } from '../libs/luxon.js';
+import { DateTime } from '../luxon/luxon.js';
 
 export default (dateFrom, dateTo) => {
     if (dateFrom < dateTo) {

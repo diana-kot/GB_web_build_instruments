@@ -1,5 +1,5 @@
-import { printError, printDateDiff } from '../utils/print.js';
-import getDateDiff from '../utils/getDateDiff.js';
+import { printError, printDateDiff } from './utils/print.js';
+import getDateDiff from './utils/getDateDiff.js';
 
 const form = document.getElementById("calcDate");
 
