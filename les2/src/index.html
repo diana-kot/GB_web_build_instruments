@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/ico">
+	<title>Webpack</title>
+</head>
+<body>
+	<div class="tabs">
+		<ul class="tabs__list">
+			<li class="tabs__item"><button class="tabs__btn tabs__btn--active" data-tabs-path="calc">Калькулятор</button></li>
+			<li class="tabs__item"><button class="tabs__btn" data-tabs-path="timer">Таймер</button></li>
+		</ul>
+        <div class="tabs__content tabs__content--active" data-tabs-target="calc">
+            <div class="content">
+                <h2 class="content__title">Калькулятор дат</h2>
+                <form id="calcDate">
+                    <label for="dateFrom">
+                        Первая дата:
+                        <input type="date" name="dateFrom" id="dateFrom">
+                    </label>
+                    <label for="dateTo">
+                        Вторая дата:
+                        <input type="date" name="dateTo" id="dateTo">
+                    </label>
+                    <button type="submit">Рассчитать промежуток</button>
+                </form>
+                <p id="output"></p>
+            </div>
+        </div>
+		<div class="tabs__content" data-tabs-target="timer">
+            <div class="content">
+                <h2 class="content__title">Таймер</h2>
+                <form id="timer">
+                    <label>
+                        <strong>Укажите кол-во секунд для обратного отсчета:</strong>
+                        <input type="number" class="seconds" name="seconds" value="0" />
+                    </label>
+                    <button type="submit" value="1">Старт</button>
+                    <button type="submit" value="2">Стоп</button>
+                </form>
+                <div id="countdown" class="countdown">
+                    <div class="countdown-flex">
+                        <div class="countdown-number">
+                            <span class="hours countdown-time"></span>
+                            <span class="countdown-text">Hours</span>
+                        </div>
+                        <div class="countdown-number">
+                            <span class="minutes countdown-time"></span>
+                            <span class="countdown-text">Minutes</span>
+                        </div>
+                        <div class="countdown-number">
+                            <span class="seconds countdown-time"></span>
+                            <span class="countdown-text">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="deadline-message" class="deadline-message">
+                    Время вышло!
+                </div>
+            </div>
+        </div>
+	</div>
+
+</body>
+</html>
