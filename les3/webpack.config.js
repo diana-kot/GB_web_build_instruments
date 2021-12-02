@@ -6,6 +6,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
+// const CopyPlugin = require("copy-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
 
 
 
@@ -32,7 +34,7 @@ const optimization = () => {
   };
 
   const plugins = () => {
-      const base = [
+    const base = [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src', 'index.html'),
             minify: {
@@ -50,6 +52,14 @@ const optimization = () => {
         new MiniCssExtractPlugin({ 
             filename: '[name].[contenthash].css' 
         }),
+        new CompressionPlugin()
+        // new CopyPlugin([
+        //     {
+        //         from: 'src/audio',
+        //         to: 'dist/[name].[ext]',
+        //         toType: 'template'
+        //     }
+        // ])
         
     ]
 
@@ -151,6 +161,4 @@ module.exports = {
 
         ]
     }
-
-
 }
